@@ -1,6 +1,5 @@
 package com.absim.sales.dto;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

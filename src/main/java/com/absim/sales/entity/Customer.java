@@ -11,13 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-public class Customer {
+@Builder
+public class Customer extends AuditModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,4 +33,7 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private List<Report> reports;
+
+    @OneToMany(mappedBy = "customer")
+    private List<Sale> sales;
 }

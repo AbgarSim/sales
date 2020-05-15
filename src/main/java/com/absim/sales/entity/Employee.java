@@ -11,12 +11,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Builder
 public class Employee {
 
     @Id
@@ -31,8 +33,13 @@ public class Employee {
 
     private String city;
 
-    private String position;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_position_id")
+    private EmployeePosition position;
 
     @OneToMany(mappedBy = "employee")
     private List<Report> reports;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Sale> sales;
 }
