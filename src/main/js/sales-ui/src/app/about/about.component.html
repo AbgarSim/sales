@@ -13,15 +13,12 @@
                             </div>
                             <div class="row">
                                 <div class="tim-typo">
-                                    <h1>The Life of Material Dashboard </h1>
+                                    <h1> {{ mainPagePost.title }}</h1>
                                 </div>
                                 <div class="tim-typo">
                                     <blockquote class="blockquote">
                                         <p>
-                                            I will be the leader of a company that ends up being worth billions of
-                                            dollars, because I got the answers. I understand culture. I am the nucleus.
-                                            I think that’s a responsibility that I have, to push possibilities, to show
-                                            people, this is the level that things could be at.
+                                            {{ mainPagePost.body }}
                                         </p>
                                     </blockquote>
                                 </div>
@@ -38,10 +35,10 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-gray">Sales Inc.</h6>
-                        <h4 class="card-title">We Sell Stuff!!!</h4>
+                        <h6 class="card-category text-gray">{{ generalInfo.companyName }}</h6>
+                        <h4 class="card-title">{{ generalInfo.mottoTitle }}</h4>
                         <p class="card-description">
-                            Don't be scared of selling things, because proffic is deffinetly something we like! Imagine your favourite superhero, now imagine he has a lot of money! Well you can almost be like him if you sell stuff!
+                            {{ generalInfo.mottoBody }}
                         </p>
                         <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
                     </div>

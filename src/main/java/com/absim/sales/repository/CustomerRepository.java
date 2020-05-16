@@ -11,5 +11,4 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     //@Query("select c from Customer join c.sales s ")
     List<Customer> findAll();
-
 }

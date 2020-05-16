@@ -7,7 +7,7 @@ import com.absim.sales.entity.EmployeePosition;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface EmployeePositionRepository extends JpaRepository<Customer, Long>{
+public interface EmployeePositionRepository extends JpaRepository<EmployeePosition, Long>{
 
     Optional<EmployeePosition> findByName(final String name);
 }

@@ -13,5 +13,5 @@ import org.springframework.data.repository.query.Param;
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 
     @Query("select e from Employee e join e.position p where p.name = :employeePosition")
-    List<Employee> findAllByEmployeePosition(@Param("employeePosition") final EmployeePosition employeePosition);
+    List<Employee> findAllByEmployeePosition(@Param("employeePosition") final String employeePosition);
 }

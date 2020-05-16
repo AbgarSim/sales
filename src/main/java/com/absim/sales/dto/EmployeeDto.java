@@ -19,9 +19,9 @@ public class EmployeeDto {
 
     private String name;
 
-    private LocationDto location;
+    private String email;
 
-    private String city;
+    private LocationDto location;
 
     private EmployeePositionDto position;
 

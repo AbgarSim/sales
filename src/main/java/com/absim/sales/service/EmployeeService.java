@@ -25,7 +25,7 @@ public class EmployeeService {
 
     public List<EmployeeDto> getAllEmployeesByPosition(final String position) {
         EmployeePosition byName = employeePositionRepository.findByName(position).orElseThrow(IllegalArgumentException::new);
-        return employeeRepository.findAllByEmployeePosition(byName).stream()
+        return employeeRepository.findAllByEmployeePosition(byName.getName()).stream()
                 .map(employeeConverter::toDto)
                 .collect(Collectors.toList());
     }

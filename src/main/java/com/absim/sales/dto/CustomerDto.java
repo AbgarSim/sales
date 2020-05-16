@@ -19,9 +19,9 @@ public class CustomerDto {
 
     private String name;
 
-    private Location location;
+    private LocationDto location;
 
-    private List<Report> reports;
+    private List<ReportDto> reports;
 
     private Date firstContact;
 }

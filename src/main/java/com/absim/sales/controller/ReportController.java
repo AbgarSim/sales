@@ -1,5 +1,6 @@
 package com.absim.sales.controller;
 
+import com.absim.sales.converter.CountDto;
 import com.absim.sales.service.ReportService;
 
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,9 @@ public class ReportController {
     private final ReportService reportService;
 
     @GetMapping("/reports/negative")
-    public ResponseEntity<Long> getNegativeReportsCount(){
-        return ResponseEntity.ok(reportService.getNegativeReportCount());
+    public ResponseEntity<CountDto> getNegativeReportsCount(){
+        Long negativeReportCount = reportService.getNegativeReportCount();
+        return ResponseEntity.ok(CountDto.builder().count(negativeReportCount).build());
     }
 
 }

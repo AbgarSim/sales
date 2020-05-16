@@ -2,6 +2,7 @@ package com.absim.sales.controller;
 
 import java.util.List;
 
+import com.absim.sales.converter.CountDto;
 import com.absim.sales.dto.CustomerDto;
 import com.absim.sales.service.CustomerService;
 
@@ -20,5 +21,10 @@ public class CustomerController {
     @GetMapping("/customers/top-sales")
     public ResponseEntity<List<CustomerDto>> getTopCustomersBySales() {
         return ResponseEntity.ok(customerService.getTopCustomers());
+    }
+
+    @GetMapping("/customers/count")
+    public ResponseEntity<CountDto> getCustomersCount(){
+        return ResponseEntity.ok(customerService.getCustomersCount());
     }
 }

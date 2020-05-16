@@ -3,6 +3,7 @@ package com.absim.sales.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.absim.sales.converter.CountDto;
 import com.absim.sales.converter.CustomerConverter;
 import com.absim.sales.dto.CustomerDto;
 import com.absim.sales.entity.Customer;
@@ -26,5 +27,9 @@ public class CustomerService {
                 .map(customerConverter::toDto)
                 .limit(5)
                 .collect(Collectors.toList());
+    }
+
+    public CountDto getCustomersCount() {
+        return CountDto.builder().count(customerRepository.count()).build();
     }
 }

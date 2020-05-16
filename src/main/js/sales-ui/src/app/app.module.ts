@@ -14,6 +14,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { MainPageComponent } from './main-page/main-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -21,9 +22,11 @@ import { MainPageComponent } from './main-page/main-page.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     NavigationModule,
     RouterModule,
     AppRoutingModule,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAWAnh30cu0QwisUYtZCqNuAgTTYO0acQI'
     })

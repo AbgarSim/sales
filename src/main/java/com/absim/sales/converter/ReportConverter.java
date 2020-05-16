@@ -13,8 +13,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReportConverter {
 
-    private final CustomerConverter customerConverter;
-
     private final EmployeeConverter employeeConverter;
 
     public Report toEntity(final ReportDto dto) {
@@ -22,7 +20,6 @@ public class ReportConverter {
                 .id(dto.getId())
                 .isPositive(dto.getIsPositive())
                 .reportText(dto.getReportText())
-                .customer(customerConverter.toEntity(dto.getCustomer()))
                 .employee(employeeConverter.toEntity(dto.getEmployee()))
                 .build();
     }
@@ -32,7 +29,6 @@ public class ReportConverter {
                 .id(entity.getId())
                 .isPositive(entity.getIsPositive())
                 .reportText(entity.getReportText())
-                .customer(customerConverter.toDto(entity.getCustomer()))
                 .employee(employeeConverter.toDto(entity.getEmployee()))
                 .build();
     }
